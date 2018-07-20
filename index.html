@@ -1,0 +1,14 @@
+<html>
+    <head>
+       <title>Hello world</title>
+    </head>
+<script src = "/scripts/socket.io-client/dist/socket.io.js"></script>
+    
+    <script>
+       var socket = io();
+       socket.on('name', function(userId){
+            console.log("Herer I am")
+       });
+    </script>
+    <body>Hello world</body>
+ </html>
