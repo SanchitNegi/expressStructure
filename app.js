@@ -2,14 +2,29 @@ var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
+var session =require('express-session');
 var logger = require('morgan');
 const mode = process.env.NODE_ENV || "development";
 var middleware=require('./Middleware/test.middleware')
 var env=require('dotenv').config({path:`.env.${mode}`});
 var app = express();
+var store=new session.MemoryStore();
+app.use(session({secret:"sdsdsdsdsdds",store:store,saveUninitialized:false,resave:true}));
+app.use(function(req,res,next){
+  
+  if(req.path!='/signUp'){
+    store.get(req.query['sessionId'],function(err,data){
+      console.log('herer')
+              console.log(err,data);
+    })
+  }
+  next()
+       
+
+})
 const router = express.Router()
 
-var allowCrossDomain = function(req, res, next) {
+ var allowCrossDomain = function(req, res, next) {
   
   var allowedOrigins = [];
   var origin = req.headers.origin;

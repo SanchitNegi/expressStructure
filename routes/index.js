@@ -14,6 +14,6 @@ var requireFiles = function (directory, app) {
   })
 }
 
-module.exports = function (app) {
+ module.exports = function (app) {
   requireFiles(__dirname, app);
 }

@@ -5,10 +5,14 @@
 <script src = "/scripts/socket.io-client/dist/socket.io.js"></script>
     
     <script>
-       var socket = io();
-       socket.on('name', function(userId){
+       var socket = io('/chat');
+       var socket1 = io('/chat1');
+       socket.on('name', function(){
             console.log("Herer I am")
        });
-    </script>
+       socket.on('name1', function(){
+            console.log("Herer I am in 2")
+       });
+     </script>
     <body>Hello world</body>
  </html>
