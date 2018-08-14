@@ -50,14 +50,14 @@ app.use(allowCrossDomain);
 //app.use(middleware.checkToken);
 
 var mongo=require('./DbConnection');//Database connection 
-var elasticClient=require('./DbConnection/elasticConnection');//Database connection 
-elasticClient.cluster.health({},function(err,resp,status) {
-  console.log("=====================================");
-  console.log("Elastic Connection Info");
-  console.log("=====================================");
-  console.log("-- Client Health --",resp);
-  console.log("=====================================");
-});
+// var elasticClient=require('./DbConnection/elasticConnection');//Database connection 
+// elasticClient.cluster.health({},function(err,resp,status) {
+//   console.log("=====================================");
+//   console.log("Elastic Connection Info");
+//   console.log("=====================================");
+//   console.log("-- Client Health --",resp);
+//   console.log("=====================================");
+// });
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
