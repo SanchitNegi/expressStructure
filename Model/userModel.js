@@ -31,5 +31,5 @@ Userschema.statics.updateUser=function updateUser(query,data,cb){
     })
     
 }
-var User = mongoose.model('User', Userschema);
+ var User = mongoose.model('User', Userschema);
 module.exports=User;
