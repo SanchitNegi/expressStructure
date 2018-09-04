@@ -91,4 +91,4 @@ function testing(req,res){
 
 }
 
-module.exports={signUp,updateUser,testing}
+ module.exports={signUp,updateUser,testing}
