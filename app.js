@@ -33,10 +33,10 @@ const router = express.Router()
       res.setHeader('Access-Control-Allow-Origin', origin);
   }
  
-  //res.header('Access-Control-Allow-Origin', '*');
-  res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS');
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
   res.header('Access-Control-Allow-Credentials', 'true');
-  res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization, Content-Length, X-Requested-With');
+  res.header('Access-Control-Allow-Headers', 'Content-Type, auth-token,Authorization, Content-Length, X-Requested-With');
 
   // intercept OPTIONS method
   if ('OPTIONS' == req.method) {

@@ -11,12 +11,12 @@ var events1=new event.EventEmitter();
 
 // }
 function signUp(req,res){
-
+           
             
-            req.session.email="san@mailinator.com";
-            req.session.userId="1234";
+            // req.session.email="san@mailinator.com";
+            // req.session.userId="1234";
             
-            res.status(200).json({session:req.session.id,data:req.session})
+            res.status(200).json({data:req.body})
             
             // var room1=global.io.of('/chat');
             // room1.on('connection',function(socket){
@@ -68,15 +68,18 @@ function updateUser(req,res){
 }
 
 function testing(req,res){
-  
-    if(req.session.id==req.query['sessionId']){
-        console.log("Hurray I am")
-    }
-    if(req.session.email){
-        console.log("Herere");
-    }else{
-        console.log("Herere I AM");
-    }
+    // console.log("Queryh",req.query);
+    // console.log(req.params);return 
+
+    return res.status(200).jsonp({code:200,data:{name:'sam',age:30}})
+    // if(req.session.id==req.query['sessionId']){
+    //     console.log("Hurray I am")
+    // }
+    // if(req.session.email){
+    //     console.log("Herere");
+    // }else{
+    //     console.log("Herere I AM");
+    // }
     // var session =require('express-session');
     // var store=new session.MemoryStore();
     // store.get(req.query['sessionId'],function(err,data){
