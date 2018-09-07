@@ -15,8 +15,11 @@ function signUp(req,res){
             
             // req.session.email="san@mailinator.com";
             // req.session.userId="1234";
-            
-            res.status(200).json({data:req.body})
+            //io.emit('sanchit',{name:"sam"});
+            io.on('connection', function(socket){
+                socket.broadcast.emit({name:"sam"});
+            });
+            res.status(200).json({data:{name:"sam"}})
             
             // var room1=global.io.of('/chat');
             // room1.on('connection',function(socket){
